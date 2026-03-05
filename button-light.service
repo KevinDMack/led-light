@@ -1,0 +1,14 @@
+[Unit]
+Description=LED Light Button Service
+After=network.target
+
+[Service]
+Type=simple
+User=nivek
+WorkingDirectory=/home/nivek/led-light
+ExecStart=/usr/bin/python3 button-light.py
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
